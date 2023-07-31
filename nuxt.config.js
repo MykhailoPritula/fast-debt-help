@@ -1,5 +1,5 @@
 export default {
-  ssr: true,
+  ssr: false,
   head: {
     title: 'Fast Debt Help',
     htmlAttrs: {
@@ -42,7 +42,8 @@ export default {
     '@nuxtjs/axios',
   ],
   router: {
-    base: '/',
+    // base: '/',
+    base: '/fast-debt-help/',
     mode: 'history',
     extendRoutes(routes, resolve) {
       routes.push({
@@ -53,10 +54,12 @@ export default {
     },
   },
   generate: {
-    dir: './dist_server'
+    // dir: './dist_server'
+    dir: './dist'
   },
   build: {
-    target: 'server'
+    // target: 'server'
+    target: 'static'
   },
   server: {
     port: 8007,
